@@ -101,9 +101,11 @@ git push origin main
 ## 👤 Default Admin
 
 ```
-Email: admin@admin.com
-Password: admin123
+Email: admin@edutour.com
+Password: EduTour@2024#Secure
 ```
+
+⚠️ **PENTING:** Ganti password setelah login pertama kali untuk keamanan!
 
 ## 📦 Local Development
 

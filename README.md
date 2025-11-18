@@ -117,9 +117,11 @@ npm run build
 Setelah setup database otomatis, gunakan akun ini untuk login:
 
 ```
-Email: admin@admin.com
-Password: admin123
+Email: admin@edutour.com
+Password: EduTour@2024#Secure
 ```
+
+⚠️ **PENTING:** Ganti password setelah login pertama kali untuk keamanan!
 
 ## 📁 Struktur Project
 
