@@ -89,7 +89,7 @@ export const userService = {
 
 // Dashboard Services
 export const dashboardService = {
-  getStats: () => api.get('/dashboard')
+  getStats: () => api.get('/dashboard/stats')
 };
 
 export default api;
