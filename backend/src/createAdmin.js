@@ -17,9 +17,9 @@ async function createDefaultAdmin() {
 
     // Buat admin default
     const defaultAdmin = {
-      nama: 'Administrator',
+      nama: 'Admin EduTour',
       email: 'admin@edutour.com',
-      password: 'EduTour@2024#Secure',
+      password: 'Admin@EduTour2024',
       role: 'admin'
     };
 

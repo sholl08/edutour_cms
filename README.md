@@ -118,10 +118,10 @@ Setelah setup database otomatis, gunakan akun ini untuk login:
 
 ```
 Email: admin@edutour.com
-Password: EduTour@2024#Secure
+Password: Admin@EduTour2024
 ```
 
-⚠️ **PENTING:** Ganti password setelah login pertama kali untuk keamanan!
+⚠️ **PENTING:** Simpan kredensial ini dengan aman!
 
 ## 📁 Struktur Project
 
