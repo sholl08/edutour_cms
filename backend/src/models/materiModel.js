@@ -5,7 +5,8 @@ const Materi = {
   // Ambil semua materi dengan JOIN destinasi
   getAll: async () => {
     const [rows] = await db.query(`
-      SELECT m.*, d.nama_destinasi 
+      SELECT m.*, 
+             COALESCE(d.nama_destinasi, 'Destinasi Dihapus') AS nama_destinasi 
       FROM materi m
       LEFT JOIN destinasi d ON m.destinasi_id = d.id
       ORDER BY m.created_at DESC
@@ -31,10 +32,10 @@ const Materi = {
   // Tambah data materi baru
   create: async (data) => {
     const [result] = await db.query(
-      'INSERT INTO materi (destinasi_id, judul, isi, media) VALUES (?, ?, ?, ?)',
-      [data.destinasi_id, data.judul, data.isi, data.media]
+      'INSERT INTO materi (destinasi_id, judul, isi, media, created_by) VALUES (?, ?, ?, ?, ?)',
+      [data.destinasi_id, data.judul, data.isi, data.media, data.created_by || null]
     );
-    return result;
+    return result.insertId;
   },
 
   // Update data materi

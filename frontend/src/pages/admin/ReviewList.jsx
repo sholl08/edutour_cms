@@ -16,9 +16,12 @@ const ReviewList = () => {
   const fetchReviews = async () => {
     try {
       const response = await reviewService.getAll();
-      setReviews(response.data);
+      console.log('Review response:', response.data);
+      setReviews(response.data || []);
     } catch (error) {
+      console.error('Error fetching reviews:', error);
       toast.error('Gagal memuat data review');
+      setReviews([]);
     } finally {
       setLoading(false);
     }

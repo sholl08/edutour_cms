@@ -45,21 +45,27 @@ exports.createMateri = async (req, res) => {
   try {
     const { judul, isi, destinasi_id } = req.body;
     let media = null;
+    let created_by = null;
+
+    // Extract user ID from token
+    if (req.user && req.user.id) {
+      created_by = req.user.id;
+    }
 
     if (req.file) {
       media = req.file.filename;
     }
 
-    const result = await Materi.create({ destinasi_id, judul, isi, media });
+    const insertId = await Materi.create({ destinasi_id, judul, isi, media, created_by });
 
     res.status(201).json({
       success: true,
       message: 'Materi berhasil ditambahkan',
-      data: { id: result.insertId },
+      data: { id: insertId },
     });
   } catch (err) {
     console.error('Gagal menambah materi:', err);
-    res.status(500).json({ success: false, message: 'Gagal menambah materi' });
+    res.status(500).json({ success: false, message: 'Gagal menambah materi', error: err.message });
   }
 };
 

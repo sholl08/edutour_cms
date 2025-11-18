@@ -3,10 +3,12 @@ const db = require('../config/db');
 class Review {
   static async getAll() {
     const [rows] = await db.query(`
-      SELECT r.*, u.nama AS nama_user, d.nama_destinasi 
+      SELECT r.*, 
+             COALESCE(u.nama, 'User Dihapus') AS nama_user, 
+             COALESCE(d.nama_destinasi, 'Destinasi Dihapus') AS nama_destinasi 
       FROM review r
-      JOIN users u ON r.user_id = u.id
-      JOIN destinasi d ON r.destinasi_id = d.id
+      LEFT JOIN users u ON r.user_id = u.id
+      LEFT JOIN destinasi d ON r.destinasi_id = d.id
       ORDER BY r.created_at DESC
     `);
     return rows;
@@ -14,9 +16,10 @@ class Review {
 
   static async getByDestinasi(destinasi_id) {
     const [rows] = await db.query(`
-      SELECT r.*, u.nama AS nama_user 
+      SELECT r.*, 
+             COALESCE(u.nama, 'User Dihapus') AS nama_user 
       FROM review r
-      JOIN users u ON r.user_id = u.id
+      LEFT JOIN users u ON r.user_id = u.id
       WHERE r.destinasi_id = ?
       ORDER BY r.created_at DESC
     `, [destinasi_id]);

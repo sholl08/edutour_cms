@@ -4,6 +4,6 @@ const dashboardController = require('../controllers/dashboardController');
 const authMiddleware = require('../middleware/authMiddleware');
 
 // Route untuk ambil data statistik dashboard admin
-router.get('/', authMiddleware, dashboardController.getDashboardStats);
+router.get('/stats', authMiddleware, dashboardController.getDashboardStats);
 
 module.exports = router;

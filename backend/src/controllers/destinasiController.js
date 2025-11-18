@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 // Tambah Destinasi
 exports.tambahDestinasi = async (req, res) => {
   try {
-    const { nama_destinasi, deskripsi, lokasi, latitude, longitude } = req.body;
+    const { nama_destinasi, deskripsi, kategori, lokasi, latitude, longitude } = req.body;
 
     let created_by = null;
     if (req.headers.authorization) {
@@ -20,6 +20,7 @@ exports.tambahDestinasi = async (req, res) => {
     const data = {
       nama_destinasi,
       deskripsi,
+      kategori,
       lokasi,
       latitude: parseFloat(latitude) || 0,
       longitude: parseFloat(longitude) || 0,
@@ -27,21 +28,22 @@ exports.tambahDestinasi = async (req, res) => {
       created_by
     };
 
-    await Destinasi.tambah(data);
-    res.status(201).json({ message: 'Destinasi berhasil ditambahkan', data });
+    const insertId = await Destinasi.create(data);
+    res.status(201).json({ success: true, message: 'Destinasi berhasil ditambahkan', data: { id: insertId, ...data } });
   } catch (err) {
     console.error('Error tambah destinasi:', err);
-    res.status(500).json({ error: err.message });
+    res.status(500).json({ success: false, message: 'Gagal menambah destinasi', error: err.message });
   }
 };
 
 // Update Destinasi
 exports.updateDestinasi = async (req, res) => {
   try {
-    const { nama_destinasi, deskripsi, lokasi, latitude, longitude } = req.body;
+    const { nama_destinasi, deskripsi, kategori, lokasi, latitude, longitude } = req.body;
     const data = {
       nama_destinasi,
       deskripsi,
+      kategori,
       lokasi,
       latitude: parseFloat(latitude) || 0,
       longitude: parseFloat(longitude) || 0,
@@ -49,45 +51,45 @@ exports.updateDestinasi = async (req, res) => {
     };
 
     await Destinasi.update(req.params.id, data);
-    res.status(200).json({ message: 'Destinasi berhasil diupdate', data });
+    res.status(200).json({ success: true, message: 'Destinasi berhasil diupdate', data });
   } catch (err) {
     console.error('Error update destinasi:', err);
-    res.status(500).json({ error: err.message });
+    res.status(500).json({ success: false, message: 'Gagal update destinasi', error: err.message });
   }
 };
 
 // Hapus Destinasi
 exports.hapusDestinasi = async (req, res) => {
   try {
-    await Destinasi.hapus(req.params.id);
-    res.status(200).json({ message: 'Destinasi berhasil dihapus' });
+    await Destinasi.delete(req.params.id);
+    res.status(200).json({ success: true, message: 'Destinasi berhasil dihapus' });
   } catch (err) {
     console.error('Error hapus destinasi:', err);
-    res.status(500).json({ error: err.message });
+    res.status(500).json({ success: false, message: 'Gagal hapus destinasi', error: err.message });
   }
 };
 
 // Ambil semua Destinasi
 exports.getAllDestinasi = async (req, res) => {
   try {
-    const [destinasi] = await Destinasi.getAll();
+    const destinasi = await Destinasi.getAll();
     res.status(200).json(destinasi);
   } catch (err) {
     console.error('Error ambil semua destinasi:', err);
-    res.status(500).json({ error: err.message });
+    res.status(500).json({ success: false, message: 'Gagal ambil destinasi', error: err.message });
   }
 };
 
 // Ambil detail Destinasi
 exports.getDetailDestinasi = async (req, res) => {
   try {
-    const [destinasi] = await Destinasi.getById(req.params.id);
-    if (!destinasi || destinasi.length === 0) {
-      return res.status(404).json({ message: 'Destinasi tidak ditemukan' });
+    const destinasi = await Destinasi.getById(req.params.id);
+    if (!destinasi) {
+      return res.status(404).json({ success: false, message: 'Destinasi tidak ditemukan' });
     }
-    res.status(200).json({ data: destinasi[0] });
+    res.status(200).json({ success: true, data: destinasi });
   } catch (err) {
     console.error('Error ambil detail destinasi:', err);
-    res.status(500).json({ error: err.message });
+    res.status(500).json({ success: false, message: 'Gagal ambil detail destinasi', error: err.message });
   }
 };

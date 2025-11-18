@@ -40,13 +40,15 @@ async function initDatabase() {
     await db.query(`
       CREATE TABLE IF NOT EXISTS materi (
         id INT AUTO_INCREMENT PRIMARY KEY,
-        id_destinasi INT NOT NULL,
+        destinasi_id INT NOT NULL,
         judul VARCHAR(255) NOT NULL,
-        deskripsi TEXT,
+        isi TEXT,
         media VARCHAR(255),
+        created_by INT,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-        FOREIGN KEY (id_destinasi) REFERENCES destinasi(id) ON DELETE CASCADE
+        FOREIGN KEY (destinasi_id) REFERENCES destinasi(id) ON DELETE CASCADE,
+        FOREIGN KEY (created_by) REFERENCES users(id) ON DELETE SET NULL
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
     `);
     console.log('✅ Tabel materi berhasil dibuat/sudah ada');
@@ -55,14 +57,14 @@ async function initDatabase() {
     await db.query(`
       CREATE TABLE IF NOT EXISTS review (
         id INT AUTO_INCREMENT PRIMARY KEY,
-        id_user INT NOT NULL,
-        id_destinasi INT NOT NULL,
+        user_id INT NOT NULL,
+        destinasi_id INT NOT NULL,
         rating INT NOT NULL CHECK (rating >= 1 AND rating <= 5),
         komentar TEXT,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-        FOREIGN KEY (id_user) REFERENCES users(id) ON DELETE CASCADE,
-        FOREIGN KEY (id_destinasi) REFERENCES destinasi(id) ON DELETE CASCADE
+        FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+        FOREIGN KEY (destinasi_id) REFERENCES destinasi(id) ON DELETE CASCADE
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
     `);
     console.log('✅ Tabel review berhasil dibuat/sudah ada');
