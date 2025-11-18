@@ -1,18 +1,21 @@
 {
-  "name": "backend",
+  "name": "edutour-cms-backend",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Backend API for EduTour CMS",
+  "main": "src/server.js",
   "scripts": {
-    "start": "nodemon src/server.js",
+    "start": "node src/server.js",
     "dev": "nodemon src/server.js",
     "init-db": "node src/config/initDB.js",
     "create-admin": "node src/createAdmin.js",
     "setup": "npm run init-db && npm run create-admin"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "engines": {
+    "node": ">=18.x"
+  },
+  "keywords": ["cms", "tourism", "education"],
+  "author": "Sholl",
+  "license": "MIT",
   "dependencies": {
     "bcryptjs": "^3.0.3",
     "body-parser": "^2.2.0",
