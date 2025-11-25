@@ -1,4 +1,4 @@
-# 🚀 Deployment Guide - EduTour CMS
+# Deployment Guide - EduTour CMS
 
 ## Prerequisites untuk Production
 
@@ -8,7 +8,7 @@
 
 ---
 
-## 📦 Build untuk Production
+## Build untuk Production
 
 ### 1. Update API URL
 
@@ -40,7 +40,7 @@ npm run preview
 
 ---
 
-## 🌐 Deploy ke Vercel (Recommended)
+## Deploy ke Vercel (Recommended)
 
 ### Via Vercel CLI
 
@@ -81,7 +81,7 @@ Buat `vercel.json`:
 
 ---
 
-## 🚀 Deploy ke Netlify
+## Deploy ke Netlify
 
 ### Via Netlify CLI
 
@@ -128,7 +128,7 @@ Buat `netlify.toml`:
 
 ---
 
-## 🐳 Deploy dengan Docker
+## Deploy dengan Docker
 
 ### Dockerfile
 
@@ -183,7 +183,7 @@ docker run -p 80:80 edutour-frontend
 
 ---
 
-## 📱 Deploy ke GitHub Pages
+## Deploy ke GitHub Pages
 
 ### 1. Install gh-pages
 
@@ -220,7 +220,7 @@ npm run deploy
 
 ---
 
-## ☁️ Deploy ke Cloud Platforms
+## Deploy ke Cloud Platforms
 
 ### AWS S3 + CloudFront
 
@@ -250,7 +250,7 @@ npm run build
 
 ---
 
-## 🔐 Environment Variables
+## Environment Variables
 
 ### Development (.env.development)
 ```env
@@ -264,7 +264,7 @@ VITE_API_URL=https://api.yourdomain.com/api
 
 ---
 
-## ⚙️ Optimizations untuk Production
+## Optimizations untuk Production
 
 ### 1. Enable Gzip Compression
 
@@ -298,7 +298,7 @@ sudo certbot --nginx -d yourdomain.com
 
 ---
 
-## 📊 Performance Monitoring
+## Performance Monitoring
 
 ### Google Analytics
 
@@ -326,7 +326,7 @@ Sentry.init({
 
 ---
 
-## 🔄 CI/CD Pipeline
+## CI/CD Pipeline
 
 ### GitHub Actions
 
@@ -358,7 +358,7 @@ jobs:
 
 ---
 
-## 🐛 Troubleshooting Production
+## Troubleshooting Production
 
 ### Blank Page / 404 di Production
 
@@ -381,7 +381,7 @@ jobs:
 
 ---
 
-## 📝 Post-Deployment Checklist
+## Post-Deployment Checklist
 
 - [ ] Test all pages dan fitur
 - [ ] Verify login/register works
@@ -396,7 +396,7 @@ jobs:
 
 ---
 
-## 🔗 Useful Links
+## Useful Links
 
 - [Vite Deployment Guide](https://vitejs.dev/guide/static-deploy.html)
 - [Vercel Documentation](https://vercel.com/docs)
@@ -405,4 +405,4 @@ jobs:
 
 ---
 
-**Selamat! Frontend EduTour CMS siap untuk production! 🎉**
+**Selamat! Frontend EduTour CMS siap untuk production! **
