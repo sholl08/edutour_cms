@@ -17,7 +17,7 @@ Token didapat dari response login dan disimpan di `localStorage`.
 
 ## Endpoints
 
-### 🔐 Authentication
+### Authentication
 
 #### Register User
 ```http
@@ -68,7 +68,7 @@ Content-Type: application/json
 
 ---
 
-### 🗺️ Destinasi
+### Destinasi
 
 #### Get All Destinasi
 ```http
@@ -136,7 +136,7 @@ Authorization: Bearer <admin_token>
 
 ---
 
-### 📚 Materi
+### Materi
 
 #### Get All Materi
 ```http
@@ -204,7 +204,7 @@ Authorization: Bearer <admin_token>
 
 ---
 
-### ⭐ Review
+### Review
 
 #### Get All Reviews (Admin Only)
 ```http
@@ -253,7 +253,7 @@ Authorization: Bearer <admin_token>
 
 ---
 
-### 👥 Users (Admin Only)
+### Users (Admin Only)
 
 #### Get All Users
 ```http
@@ -281,7 +281,7 @@ Authorization: Bearer <admin_token>
 
 ---
 
-### 📊 Dashboard (Admin Only)
+### Dashboard (Admin Only)
 
 #### Get Statistics
 ```http
