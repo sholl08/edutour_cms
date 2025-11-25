@@ -2,7 +2,7 @@
 
 Sistema de gestión de contenido para destinos turísticos educativos con panel administrativo completo.
 
-## 🌟 Fitur Utama
+## Fitur Utama
 
 ### Admin Panel
 - **Dashboard** - Statistik jumlah destinasi, materi, review, dan users
@@ -40,13 +40,13 @@ Sistema de gestión de contenido para destinos turísticos educativos con panel 
 - Leaflet.js 1.9.4 (Maps)
 - React Icons
 
-## 📋 Prerequisites
+## Prerequisites
 
 - Node.js (v16 atau lebih baru)
 - MySQL (v8 atau lebih baru)
 - npm atau yarn
 
-## 🚀 Instalasi
+## Instalasi
 
 ### 1. Clone Repository
 ```bash
@@ -85,7 +85,7 @@ cd ../frontend
 npm install
 ```
 
-## 🎮 Menjalankan Aplikasi
+## Menjalankan Aplikasi
 
 ### Development Mode
 
@@ -112,7 +112,7 @@ npm run build
 # Output di folder dist/
 ```
 
-## 👤 Default Admin Account
+## Default Admin Account
 
 Setelah setup database otomatis, gunakan akun ini untuk login:
 
@@ -121,9 +121,9 @@ Email: admin@edutour.com
 Password: Admin@EduTour2024
 ```
 
-⚠️ **PENTING:** Simpan kredensial ini dengan aman!
+**PENTING:** Simpan kredensial ini dengan aman!
 
-## 📁 Struktur Project
+## Struktur Project
 
 ```
 edutour_cms/
@@ -155,7 +155,7 @@ edutour_cms/
 └── README.md
 ```
 
-## 🔌 API Endpoints
+## API Endpoints
 
 ### Authentication
 - `POST /api/admin/login` - Admin login
@@ -190,7 +190,7 @@ edutour_cms/
 - `GET /api/user` - Get all users (Admin)
 - `DELETE /api/user/:id` - Delete user (Admin)
 
-## 🎨 Fitur UI/UX
+## Fitur UI/UX
 
 - **Responsive Design** - Mendukung desktop, tablet, dan mobile
 - **Loading Skeletons** - Skeleton screens untuk better UX
@@ -201,7 +201,7 @@ edutour_cms/
 - **Image Upload Preview** - Preview sebelum upload
 - **Error Handling** - Placeholder image untuk broken images
 
-## 🔒 Keamanan
+## Keamanan
 
 - JWT Token Authentication
 - Password hashing dengan bcryptjs
@@ -210,14 +210,14 @@ edutour_cms/
 - Input validation
 - SQL injection prevention
 
-## 📝 License
+## License
 
 MIT License
 
-## 👨‍💻 Developer
+## Team
 
-Dibuat dengan ❤️ untuk project Pemrograman Web
+Dibuat untuk memenuhi project Ulangan Tengah Semester Praktikum Pemrograman Web
 
 ---
 
-**Note:** Pastikan untuk mengubah JWT_SECRET di file .env dengan key yang aman untuk production!
+
