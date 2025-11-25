@@ -2,7 +2,7 @@
 
 Platform wisata edukasi berbasis web untuk menjelajahi destinasi menarik di Indonesia dengan fitur lengkap untuk admin dan user.
 
-## 🚀 Tech Stack
+## Tech Stack
 
 - **React 18** - Modern JavaScript library
 - **Vite 5** - Lightning-fast build tool
@@ -14,7 +14,7 @@ Platform wisata edukasi berbasis web untuk menjelajahi destinasi menarik di Indo
 - **React Toastify** - Toast notifications
 - **SweetAlert2** - Beautiful alerts
 
-## 📋 Prerequisites
+## Prerequisites
 
 Sebelum memulai, pastikan Anda telah menginstal:
 
@@ -22,7 +22,7 @@ Sebelum memulai, pastikan Anda telah menginstal:
 - **npm** atau **yarn**
 - **Backend API** berjalan di `http://localhost:7777`
 
-## 🔧 Instalasi
+## Instalasi
 
 1. **Clone repository atau download project**
 
@@ -41,7 +41,7 @@ Sebelum memulai, pastikan Anda telah menginstal:
    - Database MySQL sudah dikonfigurasi
    - Folder `backend/uploads/destinasi` dan `backend/uploads/materi` sudah ada
 
-## 🎯 Menjalankan Aplikasi
+## Menjalankan Aplikasi
 
 ### Development Mode
 ```bash
@@ -60,7 +60,7 @@ Hasil build ada di folder `dist/`
 npm run preview
 ```
 
-## 📁 Struktur Project
+## Struktur Project
 
 ```
 frontend_new/
@@ -105,7 +105,7 @@ frontend_new/
 └── README.md
 ```
 
-## 🔐 Role & Akses
+## Role & Akses
 
 ### Admin
 - Login di `/login` dengan memilih "Admin"
@@ -123,7 +123,7 @@ frontend_new/
 - Baca materi edukasi
 - Submit review & rating
 
-## 🌐 API Endpoints
+## API Endpoints
 
 Frontend menggunakan proxy ke `http://localhost:7777/api`:
 
@@ -158,7 +158,7 @@ Frontend menggunakan proxy ke `http://localhost:7777/api`:
 - `DELETE /user/:id` - Delete user (admin only)
 - `GET /dashboard/stats` - Get dashboard statistics (admin only)
 
-## 🎨 Fitur Utama
+## Fitur Utama
 
 ### User Features
 ✅ Hero section dengan CTA
@@ -187,7 +187,7 @@ Frontend menggunakan proxy ke `http://localhost:7777/api`:
 ✅ Proxy configuration untuk API calls
 ✅ TailwindCSS dengan custom theme
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Port 3000 sudah digunakan
 Edit `vite.config.js` dan ubah port:
@@ -215,7 +215,7 @@ Pastikan:
 - Import CSS Leaflet di `index.css`: `@import 'leaflet/dist/leaflet.css';`
 - Marker icons sudah dikonfigurasi (sudah ada di DestinasiDetail.jsx)
 
-## 📦 Build & Deploy
+## Build & Deploy
 
 ### Build untuk Production
 ```bash
@@ -238,7 +238,7 @@ Dan update `api.js`:
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:7777/api';
 ```
 
-## 📝 Catatan Penting
+## Catatan Penting
 
 1. **JWT Token** disimpan di `localStorage`
 2. **User data** disimpan di `localStorage` sebagai JSON
@@ -246,20 +246,20 @@ const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:7777/api';
 4. **Map coordinates** harus valid (latitude/longitude)
 5. **Protected routes** otomatis redirect ke login jika tidak authenticated
 
-## 👤 Default Admin (jika sudah ada di backend)
+## Default Admin (jika sudah ada di backend)
 ```
 Email: admin@edutour.com
 Password: admin123
 ```
 
-## 🤝 Kontribusi
+## Kontribusi
 
 Silakan fork repository dan buat pull request untuk kontribusi.
 
-## 📄 License
+## License
 
 MIT License - bebas digunakan untuk pembelajaran dan pengembangan.
 
 ---
 
-**Dibuat dengan ❤️ menggunakan React + Vite + TailwindCSS**
+
