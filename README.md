@@ -19,7 +19,7 @@ Sistema de gestión de contenido para destinos turísticos educativos con panel 
 - **Review** - Form untuk memberikan review destinasi
 - **Authentication** - Login dan register untuk user
 
-## 🛠️ Teknologi
+## Teknologi
 
 ### Backend
 - Node.js + Express.js
